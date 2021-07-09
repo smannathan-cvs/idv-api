@@ -21,9 +21,6 @@ export const createServer = async () => {
     logger.debug('Starting server...');
     const app = new Koa();
     const container = (app.container = await configureContainer());
-
-    var whitelist = ['https://localhost:5000']
-
     usePug(app);
     app
       .use(sslify())
